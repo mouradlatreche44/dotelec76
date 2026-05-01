@@ -1164,18 +1164,22 @@ p { margin: 0; }
 }
 .marquee-brands__track:hover { animation-play-state: paused; }
 
+/* Logos en pills blanches (les PNG ont fond blanc, le filter monochrome les rendait invisibles) */
 .marquee-brands__logo {
-  height: 48px;
+  height: 56px;
   width: auto;
-  max-width: 140px;
+  max-width: 130px;
   object-fit: contain;
   flex-shrink: 0;
-  filter: brightness(0) invert(1) opacity(0.55);
-  transition: filter var(--t) var(--ease), transform var(--t) var(--ease);
+  background: var(--white);
+  padding: 0.5rem 0.85rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.20);
+  transition: transform var(--t) var(--ease), box-shadow var(--t) var(--ease);
 }
 .marquee-brands__logo:hover {
-  filter: brightness(1) invert(0) opacity(1);
-  transform: scale(1.08);
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 8px 20px rgba(0,0,0,.30), 0 0 0 1px rgba(250,204,21,.40);
 }
 @keyframes marqueeBrands {
   from { transform: translateX(0); }
@@ -1761,21 +1765,36 @@ a.contact-info__value:hover { color: var(--accent-light); }
 }
 @media (min-width: 1024px) { .floating-call { display: none; } }
 
-/* ============== REVEAL ANIMATIONS ============== */
-[data-reveal] {
+/* ============== REVEAL ANIMATIONS (uniquement hero, désactivé ailleurs) ============== */
+/* Reveal seulement appliqué dans le hero principal (autres sections affichées normalement) */
+.hero [data-reveal],
+.urgence-hero [data-reveal],
+.page-hero [data-reveal] {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out);
 }
-[data-reveal].is-visible {
+.hero [data-reveal].is-visible,
+.urgence-hero [data-reveal].is-visible,
+.page-hero [data-reveal].is-visible {
   opacity: 1;
   transform: translateY(0);
 }
-[data-reveal][data-delay="1"] { transition-delay: 90ms; }
-[data-reveal][data-delay="2"] { transition-delay: 180ms; }
-[data-reveal][data-delay="3"] { transition-delay: 270ms; }
-[data-reveal][data-delay="4"] { transition-delay: 360ms; }
-[data-reveal][data-delay="5"] { transition-delay: 450ms; }
+.hero [data-reveal][data-delay="1"],
+.urgence-hero [data-reveal][data-delay="1"],
+.page-hero [data-reveal][data-delay="1"] { transition-delay: 90ms; }
+.hero [data-reveal][data-delay="2"],
+.urgence-hero [data-reveal][data-delay="2"],
+.page-hero [data-reveal][data-delay="2"] { transition-delay: 180ms; }
+.hero [data-reveal][data-delay="3"],
+.urgence-hero [data-reveal][data-delay="3"],
+.page-hero [data-reveal][data-delay="3"] { transition-delay: 270ms; }
+.hero [data-reveal][data-delay="4"],
+.urgence-hero [data-reveal][data-delay="4"],
+.page-hero [data-reveal][data-delay="4"] { transition-delay: 360ms; }
+.hero [data-reveal][data-delay="5"],
+.urgence-hero [data-reveal][data-delay="5"],
+.page-hero [data-reveal][data-delay="5"] { transition-delay: 450ms; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -2015,7 +2034,9 @@ a.contact-info__value:hover { color: var(--accent-light); }
 
 /* ============== URGENCE LANDING (urgence-24-7.html) ============== */
 .urgence-hero {
-  background: linear-gradient(160deg, #0B2545 0%, #13315C 50%, #1B4A8A 100%);
+  background:
+    linear-gradient(160deg, rgba(11,37,69,.94) 0%, rgba(19,49,92,.92) 50%, rgba(27,74,138,.88) 100%),
+    url('../img/services/service-depannage-urgence.jpg') center/cover no-repeat;
   color: var(--white);
   text-align: center;
   padding-block: clamp(4rem, 8vw, 7rem);
@@ -2027,7 +2048,17 @@ a.contact-info__value:hover { color: var(--accent-light); }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 50% 0%, rgba(250,204,21,.20), transparent 60%);
+    radial-gradient(circle at 50% 0%, rgba(250,204,21,.22), transparent 60%),
+    radial-gradient(circle at 10% 90%, rgba(29,78,216,.20), transparent 50%);
+  pointer-events: none;
+}
+.urgence-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  opacity: 0.08;
+  mix-blend-mode: overlay;
   pointer-events: none;
 }
 .urgence-hero__content {
