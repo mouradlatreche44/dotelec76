@@ -456,6 +456,32 @@ p { margin: 0; }
   margin-bottom: 3rem;
 }
 
+.hero__social-proof {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 999px;
+  margin-top: -1.5rem;
+  margin-bottom: 2rem;
+  color: rgba(255,255,255,.92);
+  font-size: 0.85rem;
+  font-weight: 500;
+  backdrop-filter: blur(8px);
+}
+.hero__social-proof strong {
+  color: var(--accent-light);
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+.hero__social-proof-stars {
+  display: inline-flex;
+  gap: 1px;
+  color: var(--accent-light);
+}
+
 .hero__meta {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));

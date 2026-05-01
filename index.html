@@ -14,9 +14,14 @@
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Dot'elec76 — Artisan électricien à Rouen" />
 <meta property="og:description" content="Mise aux normes, dépannage 24/7, domotique, éclairage LED. Artisan électricien à Rouen et 100 km autour. Devis gratuit." />
-<meta property="og:image" content="assets/img/hero/hero-electricien.jpg" />
+<meta property="og:image" content="https://dotelec76.pages.dev/assets/img/hero/hero-electricien.jpg" />
 <meta property="og:url" content="https://dotelec76.pages.dev/" />
 <meta property="og:locale" content="fr_FR" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Dot'elec76 — Artisan électricien à Rouen" />
+<meta name="twitter:description" content="Mise aux normes, dépannage 24/7, domotique, éclairage LED. Devis gratuit, décennale & assurance pro." />
+<meta name="twitter:image" content="https://dotelec76.pages.dev/assets/img/hero/hero-electricien.jpg" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -35,8 +40,17 @@
   "telephone": "+33604065537",
   "email": "dotelec76@gmail.com",
   "address": { "@type": "PostalAddress", "addressLocality": "Rouen", "postalCode": "76000", "addressCountry": "FR" },
+  "geo": { "@type": "GeoCoordinates", "latitude": 49.44313, "longitude": 1.09932 },
   "openingHours": ["Mo-Sa 08:00-19:00", "Su 00:00-23:59"],
-  "areaServed": "Rouen et 100 km autour (Seine-Maritime, Eure)",
+  "areaServed": [
+    { "@type": "City", "name": "Rouen" },
+    { "@type": "City", "name": "Le Havre" },
+    { "@type": "City", "name": "Dieppe" },
+    { "@type": "City", "name": "Évreux" },
+    { "@type": "AdministrativeArea", "name": "Seine-Maritime" },
+    { "@type": "AdministrativeArea", "name": "Eure" }
+  ],
+  "serviceArea": { "@type": "GeoCircle", "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 49.44313, "longitude": 1.09932 }, "geoRadius": "100000" },
   "priceRange": "€€",
   "foundingDate": "2016",
   "slogan": "Votre électricien de confiance à Rouen",
@@ -126,9 +140,20 @@
       <div class="hero__ctas" data-reveal data-delay="3">
         <a href="tel:0604065537" class="btn btn-primary">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-          06 04 06 55 37
+          Appeler — 06 04 06 55 37
         </a>
-        <a href="contact.html" class="btn btn-ghost">Demander un devis gratuit</a>
+        <a href="contact.html" class="btn btn-ghost">Diagnostic gratuit chez vous &rarr;</a>
+      </div>
+
+      <div class="hero__social-proof" data-reveal data-delay="4">
+        <span class="hero__social-proof-stars" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </span>
+        <span><strong>5,0/5</strong> &middot; 12 avis clients &middot; Réponse sous 24&nbsp;h</span>
       </div>
       <div class="hero__meta" data-reveal data-delay="4">
         <div class="hero__meta-item"><span class="hero__meta-num">20+</span><span class="hero__meta-label">années d'expérience</span></div>
