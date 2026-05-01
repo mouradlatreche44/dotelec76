@@ -121,14 +121,9 @@
   // ============== BEFORE / AFTER SLIDER ==============
   document.querySelectorAll('[data-ba-slider]').forEach((slider) => {
     const range = slider.querySelector('.ba-slider__range');
-    const after = slider.querySelector('.ba-slider__after-wrap');
-    const handle = slider.querySelector('.ba-slider__handle');
-    if (!range || !after || !handle) return;
-
+    if (!range) return;
     const update = () => {
-      const v = range.value;
-      after.style.width = v + '%';
-      handle.style.left = v + '%';
+      slider.style.setProperty('--ba-cut', range.value + '%');
     };
     range.addEventListener('input', update);
     range.addEventListener('change', update);
